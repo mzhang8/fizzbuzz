@@ -36,6 +36,7 @@ def handle_key():
 	#for v in values:
 	#	resp.pause(length=1)
 	#	resp.say(v)
+	return str(resp)
 
 """def fizzbuzz(n):
 
