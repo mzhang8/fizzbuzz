@@ -3,28 +3,19 @@ import twilio.twiml
 
 app = Flask(__name__)
 
-"""from flask import Response
-@app.route('/ajax_ddl')
-def ajax_ddl():
-    xml = 'foo'
-    return Response(xml, mimetype='text/xml')"""
-
-
 @app.route('/', methods=['GET', 'POST'])
 def hello():
-	@after_this_request
-    def add_header(response):
-        response.headers['Content-Type'] = 'text/xml; charset=utf-8'
-        return response
-
 	# Greet user
 	resp = twilio.twiml.Response()
 	resp.say("Hello.")
 
 	# Listen for caller to press keys for number
 
-	with resp.gather(action="/handle-key", method="POST", timeout="3") as g:
+	with resp.gather(method="POST", timeout="3") as g:
 		g.say("Enter a number and then wait a few seconds to play Phone Buzz.")
+
+	digits = request.values.get('Digits', None)
+	resp.say(digits)
 
 	return str(resp)
 
