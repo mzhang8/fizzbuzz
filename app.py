@@ -38,7 +38,7 @@ def handle_key():
 	#	resp.say(v)
 	return str(resp)
 
-"""def fizzbuzz(n):
+def fizzbuzz(n):
 
 	values = []
 	for i in range(n):
@@ -51,7 +51,7 @@ def handle_key():
 		else: 
 			values.append(str(i))
 
-	return values"""
+	return values
 
 
 if __name__ == '__main__':
