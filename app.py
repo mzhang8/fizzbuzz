@@ -17,7 +17,7 @@ def hello():
 
 	return str(resp)
 
-@app.route("/handle-key", methods=['POST'])
+@app.route("/handle-key", methods=['GET', 'POST'])
 def handle_key():
 	digits = request.values.get('Digits', None)
 	#digits = int(request.form['Digits'])
