@@ -27,8 +27,8 @@ def hello():
 
 @app.route("/handle-key", methods=['POST'])
 def handle_key():
-	digits = int(request.values.get('Digits', None))
-	#digits = int(request.form['Digits'])
+	#digits = int(request.values.get('Digits', None))
+	digits = int(request.form['Digits'])
 	#values = fizzbuzz(digits)
 
 	resp = twilio.twiml.Response()
