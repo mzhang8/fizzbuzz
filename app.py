@@ -15,29 +15,21 @@ def hello():
 	with resp.gather(action="/handle-key", method="POST", timeout="3") as g:
 		g.say("Enter a number and then wait a few seconds to play Phone Buzz.")
 
-	resp.say("OK... Here we go.")
-
-	#values = fizzbuzz(10)
-
-	#for v in values:
-	#	resp.pause(length=1)
-	#	resp.say(v)
-
 	return str(resp)
 
 @app.route("/handle-key", methods=['POST'])
 def handle_key():
-	#digits = int(request.values.get('Digits', None))
+	digits = request.values.get('Digits', None)
 	#digits = int(request.form['Digits'])
 	values = fizzbuzz(5)
 
 	resp = twilio.twiml.Response()
-	resp.say("Doop")
+	resp.say("OK... Here we go.")
 
 	for v in values:
 		resp.pause(length=1)
 		resp.say(v)
-		
+
 	return str(resp)
 
 def fizzbuzz(n):
