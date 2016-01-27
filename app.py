@@ -3,6 +3,12 @@ import twilio.twiml
 
 app = Flask(__name__)
 
+from flask import Response
+@app.route('/ajax_ddl')
+def ajax_ddl():
+    xml = 'foo'
+    return Response(xml, mimetype='text/xml')
+
 
 @app.route('/', methods=['GET', 'POST'])
 def hello():
@@ -19,8 +25,7 @@ def hello():
 
 @app.route("/handle-key", methods=['GET', 'POST'])
 def handle_key():
-	#digits = request.values.get('Digits', None)
-	digits = request.form["Digits"]
+	digits = request.values.get('Digits', None)
 	values = fizzbuzz(5)
 
 	resp = twilio.twiml.Response()
