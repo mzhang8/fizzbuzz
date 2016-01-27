@@ -1,4 +1,5 @@
 from flask import Flask
+from flask import request
 import twilio.twiml
 
 app = Flask(__name__)
@@ -11,11 +12,8 @@ def hello():
 
 	# Listen for caller to press keys for number
 
-	with resp.gather(method="POST", timeout="3") as g:
+	with resp.gather(action="/handle-key", method="POST", timeout="3") as g:
 		g.say("Enter a number and then wait a few seconds to play Phone Buzz.")
-
-	digits = request.values.get('Digits', None)
-	resp.say(digits)
 
 	return str(resp)
 
