@@ -3,9 +3,9 @@ import twilio.twiml
 app = Flask(__name__)
 
 
-@app.route('/')
+@app.route('/', methods=['GET', 'POST'])
 def hello():
-    resp = twilio.twiml.Response()
+	resp = twilio.twiml.Response()
 	resp.say("Hello")
 
 	return str(resp)
