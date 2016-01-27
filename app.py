@@ -30,6 +30,9 @@ def hello():
 
 	return str(resp)
 
+def handle_key():
+	digits = request.values.get('Digits', None)
+
 def fizzbuzz(n):
 
 	values = []
