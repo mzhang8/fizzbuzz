@@ -28,11 +28,13 @@ def hello():
 @app.route("/handle-key", methods=['POST'])
 def handle_key():
 	#digits = request.values.get('Digits', None)
+	resp = twilio.twiml.Response()
+	resp.say("Calculating")
+
 	digits = request.form['Digits']
 	print digits
 	values = fizzbuzz(digits)
 
-	resp = twilio.twiml.Response()
 	for v in values:
 		resp.pause(length=1)
 		resp.say(v)
