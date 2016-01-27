@@ -10,17 +10,12 @@ def hello():
 	resp = twilio.twiml.Response()
 	resp.say("Hello noob, enter a number for Phone Buzz.")
 
-	# Listen for caller to press key for number
-	with resp.gather(finishOnKey=*, action="/handle-key", method="POST") as g:
+	# Listen for caller to press keys for number
+	with resp.gather(finishOnKey=*) as g:
 		g.say("Enter a number and then press star to play Phone Buzz.")
 
-	return str(resp)
-
-@app.route("/handle-key", methods=['GET', 'POST'])
-def handle_key():
-	# Handle number key presses from user
+	# Retrieve number key presses 
 	digits_pressed = request.values.get('Digits', None)
-	resp = twilio.twiml.Response()
 	resp.say(str(digits_pressed))
 
 	return str(resp)
