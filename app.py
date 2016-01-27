@@ -8,30 +8,30 @@ app = Flask(__name__)
 def hello():
 	# Greet user
 	resp = twilio.twiml.Response()
-	resp.say("Hello noob, enter a number for Phone Buzz.")
+	resp.say("Hello noob, enter a number and then press star to play Phone Buzz.")
 
 	# Listen for caller to press keys for number
-	#g = resp.gather(finishOnKey=*)
-	#g.say("Enter a number and then press star to play Phone Buzz.")
-
-	# Retrieve number key presses 
-	#digits_pressed = request.values.get('Digits', None)
-	#resp.say(str(digits_pressed))
 
 	g = resp.gather(action="/handle-key", method="POST", finishOnKey="*")
 
 	resp.say("OK. Here we go.")
 
-	values = fizzbuzz(10)
+	#values = fizzbuzz(10)
 
-	for v in values:
-		resp.pause(length=1)
-		resp.say(v)
+	#for v in values:
+	#	resp.pause(length=1)
+	#	resp.say(v)
 
 	return str(resp)
 
 def handle_key():
 	digits = request.values.get('Digits', None)
+	values = fizzbuzz(digits)
+
+	resp = twilio.twiml.Response()
+	for v in values:
+		resp.pause(length=1)
+		resp.say(v)
 
 def fizzbuzz(n):
 
