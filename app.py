@@ -18,6 +18,11 @@ def hello():
 	#digits_pressed = request.values.get('Digits', None)
 	#resp.say(str(digits_pressed))
 
+	values = fizzbuzz(10)
+
+	for v in values:
+		resp.say(v)
+
 	return str(resp)
 
 def fizzbuzz(n):
