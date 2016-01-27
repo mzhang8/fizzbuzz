@@ -12,7 +12,8 @@ def hello():
 
 	# Listen for caller to press keys for number
 
-	g = twilio.twiml.Gather(action="/handle-key", method="GET", finishOnKey="*")
+	with resp.gather(action="/handle-key", method="GET", finishOnKey="*") as g:
+		g.say("GO")
 
 	resp.say("OK. Here we go.")
 
