@@ -31,6 +31,7 @@ def handle_key():
 	#digits = int(request.form['Digits'])
 	values = fizzbuzz(digits)
 
+	resp = twilio.twiml.Response()
 	for v in values:
 		resp.pause(length=1)
 		resp.say(v)
