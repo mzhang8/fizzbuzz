@@ -7,7 +7,7 @@ app = Flask(__name__)
 @app.route('/', methods=['GET', 'POST'])
 def hello():
 	resp = twilio.twiml.Response()
-	resp.say("Hello")
+	resp.say("Hello noob")
 
 	return str(resp)
 
