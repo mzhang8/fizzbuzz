@@ -8,11 +8,11 @@ app = Flask(__name__)
 def hello():
 	# Greet user
 	resp = twilio.twiml.Response()
-	resp.say("Hello noob, enter a number and then press star to play Phone Buzz.")
+	resp.say("Hello, enter a number and then press star to play Phone Buzz.")
 
 	# Listen for caller to press keys for number
 
-	g = resp.gather(action="/handle-key", method="POST", finishOnKey="*")
+	g = resp.gather(action="/handle-key", method="GET", finishOnKey="*")
 
 	resp.say("OK. Here we go.")
 
