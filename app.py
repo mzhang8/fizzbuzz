@@ -12,7 +12,7 @@ def hello():
 
 	# Listen for caller to press keys for number
 
-	with resp.gather(action="/handle-key", method="POST", timeout="3") as g:
+	with resp.gather(timeout= 3, action="/handle-key", method="POST") as g:
 		g.say("Enter a number and then wait a few seconds to play Phone Buzz.")
 
 	return str(resp)
@@ -20,7 +20,6 @@ def hello():
 @app.route("/handle-key", methods=['GET', 'POST'])
 def handle_key():
 	digits = request.values.get('Digits', None)
-	#digits = int(request.form['Digits'])
 	values = fizzbuzz(5)
 
 	resp = twilio.twiml.Response()
