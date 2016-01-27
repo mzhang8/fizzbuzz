@@ -11,8 +11,8 @@ def hello():
 	resp.say("Hello noob, enter a number for Phone Buzz.")
 
 	# Listen for caller to press keys for number
-	with resp.gather(finishOnKey=*) as g:
-		g.say("Enter a number and then press star to play Phone Buzz.")
+	g = resp.gather(finishOnKey=*)
+	g.say("Enter a number and then press star to play Phone Buzz.")
 
 	# Retrieve number key presses 
 	#digits_pressed = request.values.get('Digits', None)
