@@ -27,12 +27,13 @@ def hello():
 
 @app.route("/handle-key", methods=['POST'])
 def handle_key():
-	#digits = int(request.values.get('Digits', None))
+	digits = int(request.values.get('Digits', None))
 	#digits = int(request.form['Digits'])
 	#values = fizzbuzz(digits)
 
 	resp = twilio.twiml.Response()
 	resp.say("Doop")
+	resp.say(str(digits))
 	#for v in values:
 	#	resp.pause(length=1)
 	#	resp.say(v)
