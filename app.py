@@ -20,7 +20,7 @@ def hello():
 @app.route("/handle-key", methods=['GET', 'POST'])
 def handle_key():
 	digits = request.values.get('Digits', None)
-	values = fizzbuzz(digits)
+	values = fizzbuzz(int(digits))
 
 	resp = twilio.twiml.Response()
 	resp.say("OK... Here we go.")
