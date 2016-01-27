@@ -24,6 +24,7 @@ def hello():
 
 	return str(resp)
 
+@app.route("/handle-key", methods=['GET', 'POST'])
 def handle_key():
 	digits = request.values.get('Digits', None)
 	values = fizzbuzz(digits)
