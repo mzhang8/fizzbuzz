@@ -21,7 +21,7 @@ def hello():
 	values = fizzbuzz(10)
 
 	for v in values:
-		resp.pause(2)
+		resp.pause(length=2)
 		resp.say(v)
 
 	return str(resp)
