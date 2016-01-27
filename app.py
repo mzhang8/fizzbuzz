@@ -26,13 +26,13 @@ def hello():
 
 @app.route("/handle-key", methods=['GET', 'POST'])
 def handle_key():
-	digits = request.values.get('Digits', None)
+	"""digits = request.values.get('Digits', None)
 	values = fizzbuzz(digits)
 
 	resp = twilio.twiml.Response()
 	for v in values:
 		resp.pause(length=1)
-		resp.say(v)
+		resp.say(v)"""
 
 def fizzbuzz(n):
 
