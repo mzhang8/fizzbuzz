@@ -21,7 +21,7 @@ def hello():
 	values = fizzbuzz(10)
 
 	for v in values:
-		resp = twilio.twiml.Pause(2)
+		twilio.twiml.Pause(2)
 		resp.say(v)
 
 	return str(resp)
