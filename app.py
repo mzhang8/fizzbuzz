@@ -15,8 +15,8 @@ def hello():
 		g.say("Enter a number and then press star to play Phone Buzz.")
 
 	# Retrieve number key presses 
-	digits_pressed = request.values.get('Digits', None)
-	resp.say(str(digits_pressed))
+	#digits_pressed = request.values.get('Digits', None)
+	#resp.say(str(digits_pressed))
 
 	return str(resp)
 
