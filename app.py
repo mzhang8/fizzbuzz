@@ -18,7 +18,7 @@ def hello():
 	#digits_pressed = request.values.get('Digits', None)
 	#resp.say(str(digits_pressed))
 
-	g = resp.gather(action="/handle-key", method="POST", finishOnKey=*)
+	g = resp.gather(action="/handle-key", method="POST", finishOnKey="*")
 
 	resp.say("OK. Here we go.")
 
