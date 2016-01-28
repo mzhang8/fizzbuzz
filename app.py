@@ -11,8 +11,7 @@ def hello():
 	resp.say("Hello.")
 
 	# Listen for caller to press keys for number
-
-	with resp.gather(action="/handle-key", method="POST", timeout="3") as g:
+	with resp.gather(action="/handle-key", method="POST", timeout="5") as g:
 		g.say("Enter a number and then wait a few seconds to play Phone Buzz.")
 
 	return str(resp)
@@ -22,6 +21,7 @@ def handle_key():
 	digits = request.values.get('Digits', None)
 	values = fizzbuzz(int(digits))
 
+	# Say fizz buzz sequence
 	resp = twilio.twiml.Response()
 	resp.say("OK... Here we go.")
 
