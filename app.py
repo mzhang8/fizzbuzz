@@ -21,15 +21,15 @@ def play():
 		'From': '+19546517039',
 		'To': '+17542129667'
 	}
-	r = twilio.twiml.Response()
+	resp = twilio.twiml.Response()
 	twilio_signature = request.headers.get('X-Twilio-Signature')
 	if validator.validate(url, params, twilio_signature): 
-		r.say("Valid!")
+		resp.say("Valid!")
 	else:
-		r.say("Invalid!")
+		resp.say("Invalid!")
 
 	# Greet user
-	resp = twilio.twiml.Response()
+	#resp = twilio.twiml.Response()
 	resp.say("Hello.")
 
 	# Listen for caller to press keys for number
