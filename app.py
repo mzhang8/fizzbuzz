@@ -23,6 +23,7 @@ def play():
 	}
 	resp = twilio.twiml.Response()
 	twilio_signature = request.headers.get('X-Twilio-Signature')
+	resp.say(twilio_signature)
 	if validator.validate(url, params, twilio_signature): 
 		resp.say("Valid!")
 	else:
