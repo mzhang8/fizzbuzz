@@ -15,19 +15,20 @@ def play():
 	validator = RequestValidator(auth_token)
 	url = 'https://phonebuzz-phase1.herokuapp.com/'
 
-	params = {    # input parameter values here
+	"""params = {    # input parameter values here
 		'CallSid': 'CA26227316e588e817ab2498d42b02e462',
 		'Caller': '+19546517039',
 		'From': '+19546517039',
 		'To': '+17542129667'
-	}
+	}"""
+	params = request.arguments
 	resp = twilio.twiml.Response()
 	twilio_signature = request.headers.get('X-Twilio-Signature')
 	resp.say(twilio_signature)
 	if validator.validate(url, params, twilio_signature): 
 		resp.say("Valid!")
 	else:
-		resp.say("Invalid!")
+		resp.say("Sorry, this URL can only be used for Twilio.")
 
 	# Greet user
 	#resp = twilio.twiml.Response()
