@@ -29,6 +29,9 @@ def handle_key():
 		resp.pause(length=1)
 		resp.say(v)
 
+	resp.pause(length=2)
+	resp.say("Thank you for playing.")
+
 	return str(resp)
 
 def fizzbuzz(n):
