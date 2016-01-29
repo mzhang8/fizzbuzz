@@ -21,7 +21,7 @@ def play():
 		'From': '+19546517039',
 		'To': '+17542129667'
 	}"""
-	params = request.args
+	params = request.form
 	resp = twilio.twiml.Response()
 	twilio_signature = request.headers.get('X-Twilio-Signature')
 	resp.say(twilio_signature)
