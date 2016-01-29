@@ -35,11 +35,11 @@ def call_twilio():
 		phone_number = "+1" + phone_number
 		call = client.calls.create(to=phone_number,  
                            from_="+17542129667", # Twilio number
-                           url="http://phonebuzz-phase2.herokuapp.com/play")
+                           url="https://phonebuzz-phase2.herokuapp.com/play")
 
 	return redirect('/')
 
-@app.route("/play")	
+@app.route("/play", methods['GET', 'POST'])	
 def play():
 	# Greet user
 	resp = twilio.twiml.Response()
