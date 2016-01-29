@@ -1,5 +1,6 @@
 from flask import Flask
 from flask import request
+import flask
 
 from twilio.util import RequestValidator
 import twilio.twiml
@@ -9,15 +10,15 @@ app = Flask(__name__)
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
-	"""resp = twilio.twiml.Response()
+	resp = twilio.twiml.Response()
 		
 	# Greet user
 	resp.say("Hello.")
 
 	# Listen for caller to press keys for number
 	with resp.gather(action="/handle-key", method="POST", timeout="5") as g:
-		g.say("Enter a number and then wait a few seconds to play Phone Buzz.")"""
-
+		g.say("Enter a number and then wait a few seconds to play Phone Buzz.")
+		
 	return flask.render_template('index.html')
 
 
