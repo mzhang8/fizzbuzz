@@ -1,13 +1,45 @@
-h2 {
-	font-family: 'Fjalla One', sans-serif;
-	font-style: normal;
-	font-size: 35px;
-	text-align: center;
-	padding: 5px 5px;
-	margin: 0;
-	color: #393939;
+html, body, div {
+	background-color: #eee !important;
 }
 
-div {
-	margin: 0px auto;
+.title {
+	font-family: 'Ubuntu', sans-serif;
+	font-style: normal;
+	font-size: 5em;
+}
+
+.custom-button {
+	background: transparent;
+	border: 2px solid #393939;
+	border-radius: 2px;
+	box-shadow: 1px 1px 1px #393939, 0px 0px 1px #0d0d0d; 
+	font-family: 'Montserrat', sans-serif;
+	font-style: normal;
+	font-size: 1.8em;
+	padding: 5px 10px;
+}
+
+.custom-button:hover {
+	background: #ddd;
+}
+
+.custom-input {
+	border-radius: 2px;
+	border: 2px solid #393939;
+	font-size: 2.5em;
+	font-family: 'Ubuntu', sans-serif;
+	font-style: normal;
+	text-align: center;
+}
+
+.link-text, .modal-text {
+		font-family: 'Ubuntu', sans-serif;
+	font-style: normal;
+	font-size: 1.2em;
+}
+
+.modal-title {
+	font-family: 'Montserrat', sans-serif;
+	font-style: normal;
+	font-size: 1.8em;
 }

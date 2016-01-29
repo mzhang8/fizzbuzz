@@ -7,18 +7,57 @@
 	<link rel="icon" type="image/png" href="{{ url_for('static', filename='favicon.png')}}">
 
 	<!-- Fonts -->
-	<link href='https://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
 
+	<!-- Animate.css -->
+	<link rel="stylesheet" href="{{ url_for('static', filename='animate.css')}}">
     <!-- Custom CSS --> 
     <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='style.css')}}" />
+
+	<!-- jQuery -->
+	<script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+	<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+
+    <!-- Bootstrap -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 </head>
 
 <body>
-	<div>
+	<div class="container text-center main">
+		<h1 class="animated shake wow title">PhoneBuzz</h1><br><br><br>
 		<form>
-	  		Enter Phone Number: <input type="text" name="firstname"><br>
+	  		<input type="text" class="custom-input" placeholder="Phone number"><br>
+	  		<br><button type="button" class="custom-button">CALL ME!</button>
 		</form>
+		<br>
+		<a class="link-text" data-toggle="modal" data-target="#instr">What's this?</a>
 	</div>
-</body>
 
+
+<!-- Modal -->
+<div class="modal fade" id="instr" tabindex="-1" role="dialog" aria-labelledby="instr">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title modal-title" id="myModalLabel">What's this?</h4>
+      </div>
+      <div class="modal-body modal-text">
+        Welcome! This is the game of PhoneBuzz. <br><br>
+        The instructions are simple: enter your phone number in the input field and this application will dial the given number and play the FizzBuzz game. For example, if your
+        number is 123-456-7890, enter the number sequence "1234567890". <br><br>
+        Note: Only domestic phone numbers may be used at this time.
+      </div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+</body>
 </html>
