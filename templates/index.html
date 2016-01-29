@@ -30,9 +30,9 @@
 <body>
 	<div class="container text-center main">
 		<h1 class="animated shake wow title">Phone<span class="buzz">Buzz</span></h1><br><br><br>
-		<form>
-	  		<input type="text" class="custom-input" placeholder="Phone number"><br>
-	  		<br><button type="button" class="custom-button">CALL ME!</button>
+		<form action="/call" method="POST">
+	  		<input type="text" class="custom-input" name="phone" placeholder="Phone number"><br>
+	  		<br><button type="submit" class="custom-button">CALL ME!</button>
 		</form>
 		<br>
 		<a class="link-text" data-toggle="modal" data-target="#instr">What's this?</a>

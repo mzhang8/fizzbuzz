@@ -1,45 +1,11 @@
 from flask import Flask
-from flask import request, redirect
-import flask
-
-from twilio.rest import TwilioRestClient
+from flask import request
 import twilio.twiml
- 
-# Input credentials
-account_sid = "AC26ed550393d2ae7230ea12233b224a17"
-auth_token = "0eaf817384a273b077e08dcfb187ef13"
-client = TwilioRestClient(account_sid, auth_token)
 
 app = Flask(__name__)
 
 
 @app.route('/', methods=['GET', 'POST'])
-def index():
-	resp = twilio.twiml.Response()
-		
-	# Greet user
-	resp.say("Hello.")
-
-	# Listen for caller to press keys for number
-	with resp.gather(action="/handle-key", method="POST", timeout="5") as g:
-		g.say("Enter a number and then wait a few seconds to play Phone Buzz.")
-
-	return flask.render_template('index.html')
-
-@app.route("/call", methods=['POST'])
-def call_twilio():
-	phone_number = request.form['phone']
-
-	# Check that input is a valid number and call
-	if len(phone_number) == 10 and phone_number.isnumeric(): 
-		phone_number = "+1" + phone_number
-		call = client.calls.create(to=phone_number,  
-                           from_="+17542129667", # Twilio number
-                           url="http://phonebuzz-phase2.herokuapp.com/play")
-
-	return redirect('/')
-
-@app.route("/play")	
 def play():
 	# Greet user
 	resp = twilio.twiml.Response()
@@ -89,5 +55,3 @@ def fizzbuzz(n):
 
 if __name__ == '__main__':
     app.run(debug=True)
-
-
