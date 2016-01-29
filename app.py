@@ -8,17 +8,17 @@ app = Flask(__name__)
 
 
 @app.route('/', methods=['GET', 'POST'])
-def play():
-	resp = twilio.twiml.Response()
+def index():
+	"""resp = twilio.twiml.Response()
 		
 	# Greet user
 	resp.say("Hello.")
 
 	# Listen for caller to press keys for number
 	with resp.gather(action="/handle-key", method="POST", timeout="5") as g:
-		g.say("Enter a number and then wait a few seconds to play Phone Buzz.")
+		g.say("Enter a number and then wait a few seconds to play Phone Buzz.")"""
 
-	return str(resp)
+	return render_template('index.html')
 
 
 @app.route("/handle-key", methods=['GET', 'POST'])
