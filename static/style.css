@@ -1,5 +1,9 @@
-html, body, div {
+html, body {
 	background-color: #eee !important;
+}
+
+.buzz {
+	color: #cddc39;
 }
 
 .title {
