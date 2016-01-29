@@ -39,7 +39,7 @@ def call_twilio():
 
 	return redirect('/')
 
-@app.route("/play", methods['GET', 'POST'])	
+@app.route("/play", methods=['GET', 'POST'])	
 def play():
 	# Greet user
 	resp = twilio.twiml.Response()
