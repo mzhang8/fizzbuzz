@@ -18,7 +18,7 @@ def index():
 	with resp.gather(action="/handle-key", method="POST", timeout="5") as g:
 		g.say("Enter a number and then wait a few seconds to play Phone Buzz.")"""
 
-	return render_template('index.html')
+	return flask.render_template('index.html')
 
 
 @app.route("/handle-key", methods=['GET', 'POST'])
