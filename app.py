@@ -16,10 +16,9 @@ def play():
 
 	validator = RequestValidator(auth_token)
 	url = 'https://phonebuzz-phase1.herokuapp.com/'
-	params = request.form
 	twilio_signature = request.headers.get('X-Twilio-Signature')
 
-	if validator.validate(url, params, twilio_signature): 
+	if validator.validate(url, request.form, twilio_signature): 
 		# Greet user
 		resp.say("Hello.")
 
