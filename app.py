@@ -9,34 +9,26 @@ app = Flask(__name__)
 
 @app.route('/', methods=['GET', 'POST'])
 def play():
+	resp = twilio.twiml.Response()
+
 	# Validation
 	auth_token = '0eaf817384a273b077e08dcfb187ef13' # input Auth Token here
 
 	validator = RequestValidator(auth_token)
 	url = 'https://phonebuzz-phase1.herokuapp.com/'
-
-	"""params = {    # input parameter values here
-		'CallSid': 'CA26227316e588e817ab2498d42b02e462',
-		'Caller': '+19546517039',
-		'From': '+19546517039',
-		'To': '+17542129667'
-	}"""
 	params = request.form
-	resp = twilio.twiml.Response()
 	twilio_signature = request.headers.get('X-Twilio-Signature')
-	resp.say(twilio_signature)
+
 	if validator.validate(url, params, twilio_signature): 
-		resp.say("Valid!")
+		# Greet user
+		resp.say("Hello.")
+
+		# Listen for caller to press keys for number
+		with resp.gather(action="/handle-key", method="POST", timeout="5") as g:
+			g.say("Enter a number and then wait a few seconds to play Phone Buzz.")
 	else:
+		# Invalid request
 		resp.say("Sorry, this URL can only be used for Twilio.")
-
-	# Greet user
-	#resp = twilio.twiml.Response()
-	resp.say("Hello.")
-
-	# Listen for caller to press keys for number
-	with resp.gather(action="/handle-key", method="POST", timeout="5") as g:
-		g.say("Enter a number and then wait a few seconds to play Phone Buzz.")
 
 	return str(resp)
 
