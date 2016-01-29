@@ -3,14 +3,22 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Dial PhoneBuzz!</title>
-	<link rel="icon" 
-      type="image/png" 
-      href="{{ url_for('static',
-              filename='favicon.png')}}">
+	<!-- Fav icon -->
+	<link rel="icon" type="image/png" href="{{ url_for('static', filename='favicon.png')}}">
+
+	<!-- Fonts -->
+	<link href='https://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
+
+    <!-- Custom CSS --> 
+    <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='style.css')}}" />
 </head>
 
-	<body>
-		Enter phone number
-	</body>
+<body>
+	<div>
+		<form>
+	  		Enter Phone Number: <input type="text" name="firstname"><br>
+		</form>
+	</div>
+</body>
 
 </html>

@@ -1,0 +1,13 @@
+h2 {
+	font-family: 'Fjalla One', sans-serif;
+	font-style: normal;
+	font-size: 35px;
+	text-align: center;
+	padding: 5px 5px;
+	margin: 0;
+	color: #393939;
+}
+
+div {
+	margin: 0px auto;
+}
